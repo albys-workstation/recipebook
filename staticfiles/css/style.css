@@ -1,0 +1,148 @@
+/* General styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #EAE7DC;
+    margin: 0;
+    padding: 0;
+    color: #444;
+}
+
+a {
+    color: #EAE7DC;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #343A40;
+    padding: 10px 20px;
+    border-bottom: 3px solid #EAE7DC;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    margin-left: 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #E85A4F;
+}
+
+/* Container styling */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Home page styling */
+.home-container {
+    text-align: center;
+}
+
+.jumbotron {
+    background-color: #EAE7DC;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.jumbotron h1 {
+    font-size: 2.5rem;
+    color: #160f0f;
+}
+
+.jumbotron .lead {
+    color: #8E8D8A;
+}
+
+.jumbotron .btn {
+    margin-top: 20px;
+    background-color: #D8C3A5;
+    border: none;
+    color: black;
+    font-weight: bold;
+}
+
+.jumbotron .btn:hover {
+    background-color: #C2A182;
+}
+
+.btn-view-recipes {
+    background-color: #D8C3A5;
+    color: #000;
+    margin-right: 10px;
+}
+
+.btn-view-recipes:hover {
+    background-color: #C2A182;
+}
+
+.btn-add-recipe {
+    background-color: #D8C3A5;
+    color: #000;
+}
+
+.btn-add-recipe:hover {
+    background-color: #C2A182;
+}
+
+/* Featured recipes styling */
+.featured-recipes-container {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #EAE7DC;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.featured-recipes-container h2 {
+    font-size: 2rem;
+    color: #343A40;
+    text-align: center;
+}
+
+.recipe-card {
+    background-color: #F8F9FA;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #343A40;
+}
+
+.recipe-card .btn {
+    background-color: #D8C3A5;
+    border: none;
+    color: black;
+    font-weight: bold;
+}
+
+.recipe-card .btn:hover {
+    background-color: #C2A182;
+}

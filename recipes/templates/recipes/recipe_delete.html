@@ -1,0 +1,17 @@
+
+{% extends 'recipes/home.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h1>Are you sure you want to delete "{{ recipe.title }}"?</h1>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Yes, delete</button>
+                <a href="{% url 'recipe_detail' pk=recipe.pk %}" class="btn btn-secondary">No, go back</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

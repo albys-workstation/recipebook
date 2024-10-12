@@ -1,0 +1,58 @@
+{% extends 'recipes/base.html' %}
+{% load static %}
+
+{% block title %}Recipe List - Recipe Book{% endblock %}
+
+{% block content %}
+<div class="recipe-list-container container mt-5">
+    <h1 class="text-center my-4">Recipe List</h1>
+
+    <!-- Search form -->
+    <form method="GET" action="{% url 'recipe_list' %}">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="search" placeholder="Search recipes...">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Category filters -->
+    <div class="mb-3">
+        <a href="{% url 'recipe_list' %}?category=veg" class="btn btn-outline-success">Veg</a>
+        <a href="{% url 'recipe_list' %}?category=non-veg" class="btn btn-outline-danger">Non-Veg</a>
+        <a href="{% url 'recipe_list' %}?category=dessert" class="btn btn-outline-warning">Dessert</a>
+    </div>
+
+    <div class="row">
+        {% for recipe in recipes %}
+            <div class="col-md-4 mb-4 text-center">
+                
+                <div class="card h-100 shadow-sm">
+                    {% if recipe.image %}
+                        <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" class="card-img-top recipe-img">
+                    {% else %}
+                        <img src="{% static 'default_image.jpg' %}" alt="No Image Available" class="card-img-top recipe-img">
+                    {% endif %}
+                    
+                    <div class="card-body">
+
+                        <span class="rating ms-2" style="font-size: 0.8em;"> <!-- Adjust the font size for the rating number -->
+                            <img src="{% static 'recipes/star.png' %}" style="width: 20px; height: 20px; margin-right: 2px;" alt="star">
+                            <span>{{ recipe.average_rating|floatformat:1 }}</span>
+                        </span>
+                        
+                        <h5 class="card-title">
+                            {{ recipe.title }}
+                            
+                        </h5>
+                        <a href="{% url 'recipe_detail' recipe.pk %}" class="btn btn-primary" style="background-color: #f8dcc4;">View Recipe</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+        <p>No recipes found.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

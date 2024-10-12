@@ -1,0 +1,48 @@
+{% extends 'recipes/base.html' %}
+{% load static %}
+
+{% block title %}Home - Recipe Book{% endblock %}
+
+{% block content %}
+<div class="home-container">
+    <div class="jumbotron text-center">
+        <h1 class="display-4" style="color:#E85A4F;">Welcome to the Recipe Book</h1>
+        <p class="lead" style="color:#8E8D8A;">Discover and share your favorite recipes with the world!</p>
+        <a class="btn btn-view-recipes" href="{% url 'recipe_list' %}" role="button">View Recipes</a>
+        <a class="btn btn-add-recipe" href="{% url 'recipe_new' %}" role="button">Add New Recipe</a>
+    </div>
+    
+    <!-- Top Rated Recipes -->
+    <div class="container mt-5">
+        
+        <h2 class="text-center mb-4">Top Rated Recipes</h2>
+           
+            <div class="card-body">
+                
+                <div class="top-rated-recipes-container text-center container-custom">
+                    
+                    <div class="row">
+                        {% for recipe in top_rated_recipes %}
+                            <div class="col-md-4">
+                                <div class="card">
+                                    {% if recipe.image %}
+                                        <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}">
+                                    {% else %}
+                                        <img src="{% static 'recipes/default_image.jpg' %}" class="card-img-top" alt="{{ recipe.title }}">
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ recipe.title }}</h5>
+                                        <p class="card-text">Average Rating: {{ recipe.average_rating|floatformat:1 }}</p>
+                                        <a href="{% url 'recipe_detail' recipe.pk %}" class="btn btn-primary" style="background-color: #8E8D8A;">View Recipe</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Rated Recipes -->
+</div>
+{% endblock %}

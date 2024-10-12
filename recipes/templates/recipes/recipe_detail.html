@@ -1,0 +1,62 @@
+{% extends 'recipes/base.html' %}
+{% load static %}
+<head>
+    <title>Recipe Book</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            padding-top: 50px;
+            background-image: url("{% static 'recipes/new recipe.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: #333; /* Set text color for better contrast */
+        }
+        .jumbotron {
+            background-color: rgba(255, 255, 255, 0.8); /* Use rgba to create a semi-transparent background */
+        }
+    </style>
+</head>
+{% block content %}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h1>{{ recipe.title }}</h1>
+            <div class="recipe-info">
+                <h2>Ingredients</h2>
+                <p>{{ recipe.ingredients }}</p>
+                <h2>Instructions</h2>
+                <p>{{ recipe.instructions }}</p>
+            </div>
+            
+        
+            <div class="recipe-actions">
+                {% if user == recipe.author or user.is_staff %}
+                    <a href="{% url 'recipe_edit' pk=recipe.pk %}" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'recipe_delete' pk=recipe.pk %}" class="btn btn-danger">Delete</a>
+                {% endif %}
+                <a href="{% url 'recipe_list' %}" class="btn btn-secondary">Back to Recipes</a>
+            </div>
+
+            <div class="rating-form mt-4">
+                <h2>Rate this Recipe</h2>
+                {% if user.is_authenticated %}
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Submit Rating</button>
+                </form>
+                {% else %}
+                <p><a href="{% url 'login' %}">Login</a> to rate this recipe.</p>
+                {% endif %}
+            </div>
+
+            <div class="average-rating mt-4">
+                <h2>Average Rating: {{ recipe.ratings.all|length }}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

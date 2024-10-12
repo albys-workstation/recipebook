@@ -1,0 +1,19 @@
+{% extends 'recipes/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <div class="container">
+                <h1>Add New Recipe</h1>
+                <p>Description: If your recipe is a dessert, select 'Dessert' in category. If it's veg, select 'Veg', and if it's non-veg, select 'Non-Veg'.</p>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,211 @@
+/* static/css/custom.css */
+
+/* General Styles */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 70px;
+  background-image: url("{% static 'recipes/bg.jpg' %}");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: #333; /* Set text color for better contrast */
+}
+
+/* Navbar */
+.navbar {
+  background-color: #5a67d8; /* Indigo color */
+}
+
+.navbar-brand,
+.nav-link {
+  color: #6b6a6a; /* White text for better contrast */
+}
+
+.nav-link:hover {
+  color: #ffdd57 !important; /* Amber color */
+}
+
+/* Jumbotron */
+.jumbotron {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  padding: 2rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards */
+.card {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.btn-secondary {
+  background-color: #5a67d8; /* Indigo color */
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #434190; /* Darker Indigo */
+}
+
+/* Recipe Detail Page */
+.container .recipe-detail {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  padding: 2rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.recipe-detail h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #5a67d8; /* Indigo color */
+}
+
+.recipe-detail h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.recipe-detail p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Form Styles */
+.form-container {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.form-container {
+    background-image: url('D:\project2\mini project\myrecipebook\myrecipebook\recipes\static\recipes\new recipe.jpg.jpg');  /* Adjust path based on your actual directory structure */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Adjust as needed */
+    margin: 20px auto; /* Center the form */
+    color: #fff; /* Optional: Set text color to white for better contrast */
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: #5a67d8;
+  box-shadow: 0 0 0 0.2rem rgba(90, 103, 216, 0.25);
+}
+
+.btn-primary {
+  background-color: #5a67d8;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #434190;
+}
+
+/* Footer */
+.footer {
+  background-color: #5a67d8; /* Indigo color */
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer a {
+  color: #ffdd57 !important; /* Amber color */
+}
+
+.footer a:hover {
+  color: #ffd600 !important; /* Brighter Amber */
+}
+
+/* static/css/custom.css */
+
+.recipe-input {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.recipe-input:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* custom.css */
+
+.form-check-input {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.form-check-label {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.form-check-input:checked + .form-check-label {
+  color: #007bff;
+}
+/* custom.css */
+
+.recipe-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.recipe-select:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
